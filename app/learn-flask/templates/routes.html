@@ -8,11 +8,14 @@
 </head>
 <body>
     <h2> {{category.upper()}} </h2>
-    <a href="/products/{{category}}/{{id}}"> Products >> {{category}} >> {{id}}</a>
+    <a href="/products/{{category}}/{{id}}"> Products {% if category %}} >> {{category}}
+        {% endif %} >> {{id}}</a>
     <hr>
     
     <a href="/products">Productos</a><br>
+    {% if category %}  <!-- Posem un condicional. A dalt l'hem posat inline -->
     <a href="/products/{{category}}">{{category.capitalize()}}</a><br>
+    {% endif %}
     <a href="/products/{{category}}/{{id}}">{{id}}</a>
     <hr>
 
@@ -27,5 +30,20 @@
         <li>Variable Id >> {{id}}</li>
     </ol>
     <hr>
+    <p>Exemple de taula amb for de jinja</p>
+    <table border="1" >
+        <thead>
+            <th>Dato</th>
+        </thead>
+        <tbody>
+            {% for i in range(10) %}
+            <tr >
+                <td style="padding: 3px;"> {{i}} </td>
+                <td style="padding: 3px;"><a href="#"><h4> Producto </h4></a></td>
+                <td style="padding: 3px;"> Descripció producte </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>       
 </body>
 </html>
