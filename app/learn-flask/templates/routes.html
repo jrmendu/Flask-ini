@@ -32,6 +32,7 @@
             <thead class="text-center border border-light">
                 <th class="p-3 m-2 ">Indice</th>
                 <th class="p-3 m-2 ">Enlace</th>
+                <th class="p-3 m-2 ">Descripció</th>
                 <th class="p-3 m-2 ">Indice Bamba</th>
                 <th class="p-3 m-2 ">Bamba</th>
             </thead>
@@ -40,8 +41,12 @@
                 <tr class="border border-light text-center">
                     <td class="p-3 m-2"> {{i}} </td>
                     <td class="p-3 m-2"><a href="#"><h6> Producto </h6>  </a></td>
+                    <td class="p-3 m-2" > Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                        Atque, assumenda nesciunt? Ipsa natus magni laborum, cupiditate cum porro quae,
+                        quia, exercitationem unde ipsum repellendus aperiam tenetur saepe consectetur
+                         dolorum nostrum? </td>
                     <td class="p-3 m-2"> Bamba {{i+1}} </td>
-                    <td class="p-3 m-2"><img src="/static/images/bamba{{ i+1 }}.jpg" width="75" height= "75" alt="bamba"></td>
+                    <td class="p-3 m-2"><img src="/static/images/bamba{{ i+1 }}.jpg" width="150" height= "150" alt="bamba"></td>
                 </tr>
                 {% endfor %}
             </tbody>
