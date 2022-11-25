@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='/css/bootstrap.min.css') }}>
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='/css/style.css') }}>
     <title>Routes</title>
 </head>
+
 <body>
     <h2> {{category.upper()}} </h2>
     <a href="/products/{{category}}/{{id}}"> Products {% if category %}} >> {{category}}
@@ -22,29 +25,36 @@
     <h3> Producto - {{id}}</h3>
     <hr>
     
-    <p>Entre dues claus podem posar les variables que rebem de l'arxiu py <br>
-    Aqui és on treballa el jinja. A les variables li podem aplicar les seves funcions o mètodes
+    <p>
+    Com treballa el jinja2: <br> Entre dues claus podem posar les variables que rebem de l'arxiu py. 
+    A les variables els podem aplicar les seves funcions o mètodes <br> Els bucles els posem entre
+    un clau i un %.
     </p>
     <ol>
         <li>Variable Categoria >> {{category}}</li>
         <li>Variable Id >> {{id}}</li>
     </ol>
     <hr>
-    <p>Exemple de taula amb for de jinja</p>
-    <table border="1" >
-        <thead>
-            <th>Dato</th>
-        </thead>
-        <tbody>
-            {% for i in range(10) %}
-            <tr >
-                <td style="padding: 3px;"> {{i}} </td>
-                <td style="padding: 3px;"><a href="#"><h4> Producto </h4></a></td>
-                <td style="padding: 3px;"> Bamba {{i+1}} </td>
-                <td><img src="./static/images/bamba{{ i }}.jpg" width="75" height= "75" alt="bamba"></td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>       
+    <h2 class="text-center">Exemple de taula amb for de jinja</h2>
+    <div class="container">
+        <table id="taula" class="mx-auto" >
+            <thead class="text-center border border-light">
+                <th class="p-3 m-2 ">Indice</th>
+                <th class="p-3 m-2 ">Enlace</th>
+                <th class="p-3 m-2 ">Indice Bamba</th>
+                <th class="p-3 m-2 ">Bamba</th>
+            </thead>
+            <tbody class="p-3">
+                {% for i in range(10) %}
+                <tr class="border border-light text-center">
+                    <td class="p-3 m-2"> {{i}} </td>
+                    <td class="p-3 m-2"><a href="#"><h4> Producto </h4></a></td>
+                    <td class="p-3 m-2"> Bamba {{i+1}} </td>
+                    <td class="p-3 m-2"><img src="./static/images/bamba{{ i+1 }}.jpg" width="75" height= "75" alt="bamba"></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>    
+    </div>   
 </body>
 </html>

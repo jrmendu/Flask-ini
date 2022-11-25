@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    padding: 10px;
+    background-color: rgb(218, 213, 155);
+}
+
+#taula {
+    background-color: rgb(144, 160, 143);
+    border: 2px rgb(82, 85, 82) solid;
+}
