@@ -4,7 +4,17 @@ body {
     background-color: rgb(218, 213, 155);
 }
 
+img {
+    border: 2px rgb(82, 85, 82) solid;
+    border-radius: 10%;
+}
+
+a {
+    text-decoration: none;
+}
+
 #taula {
     background-color: rgb(144, 160, 143);
     border: 2px rgb(82, 85, 82) solid;
 }
+

@@ -1,30 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='/css/bootstrap.min.css') }}>
-    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='/css/style.css') }}>
-    <title>Routes</title>
-</head>
+{% extends "_layout.html" %}
+{% block body %}
 
-<body>
+<!-- Productes, categories, id -->
     <h2> {{category.upper()}} </h2>
-    <a href="/products/{{category}}/{{id}}"> Products {% if category %}} >> {{category}}
-        {% endif %} >> {{id}}</a>
-    <hr>
-    
-    <a href="/products">Productos</a><br>
-    {% if category %}  <!-- Posem un condicional. A dalt l'hem posat inline -->
-    <a href="/products/{{category}}">{{category.capitalize()}}</a><br>
-    {% endif %}
-    <a href="/products/{{category}}/{{id}}">{{id}}</a>
-    <hr>
+    <div>
+        <a href="/products" class="m-3 p-3">Productos</a> 
+
+        <!-- Posem un condicional. A dalt l'hem posat inline -->
+        <a href="/products/{{category}}" class="m-3 p-3">{{category.capitalize()}}</a> 
+        
+        <a href="/products/{{category}}/{{id}}" class="m-3 p-3"> Id: {{id}}</a>
+        <hr>
+    </div>
 
     <h3> Producto - {{id}}</h3>
     <hr>
-    
+
     <p>
     Com treballa el jinja2: <br> Entre dues claus podem posar les variables que rebem de l'arxiu py. 
     A les variables els podem aplicar les seves funcions o mètodes <br> Els bucles els posem entre
@@ -48,13 +39,12 @@
                 {% for i in range(10) %}
                 <tr class="border border-light text-center">
                     <td class="p-3 m-2"> {{i}} </td>
-                    <td class="p-3 m-2"><a href="#"><h4> Producto </h4></a></td>
+                    <td class="p-3 m-2"><a href="#"><h6> Producto </h6>  </a></td>
                     <td class="p-3 m-2"> Bamba {{i+1}} </td>
-                    <td class="p-3 m-2"><img src="./static/images/bamba{{ i+1 }}.jpg" width="75" height= "75" alt="bamba"></td>
+                    <td class="p-3 m-2"><img src="/static/images/bamba{{ i+1 }}.jpg" width="75" height= "75" alt="bamba"></td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>    
     </div>   
-</body>
-</html>
+{% endblock %}
